@@ -3,13 +3,13 @@
  */
 const nextConfig = {
   images: {
-    loader: "default",
-    domains: ["localhost"],
+    loader: 'default',
+    domains: ['localhost'],
   },
   i18n: {
     locales: ['en', 'ca', 'es'],
     defaultLocale: 'en',
   },
-}
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;
