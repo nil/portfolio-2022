@@ -1,15 +1,13 @@
-import Head from "next/head"
-import "../assets/css/style.css"
-import { createContext } from "react"
-import {useRouter} from 'next/router';
+import React, { createContext } from 'react';
+import { useRouter } from 'next/router';
 
 // Import locale translated text
-import ca from '../locales/ca'
-import en from '../locales/en'
-import es from '../locales/es'
+import ca from '../locales/ca.json';
+import en from '../locales/en.json';
+import es from '../locales/es.json';
 
 // Store Strapi Global object in context
-export const LocaleContext = createContext({})
+export const LocaleContext = createContext({});
 
 const MyApp = ({ Component, pageProps }) => {
   const locales = { ca, en, es };
@@ -21,7 +19,7 @@ const MyApp = ({ Component, pageProps }) => {
         <Component {...pageProps} />
       </LocaleContext.Provider>
     </>
-  )
-}
+  );
+};
 
-export default MyApp
+export default MyApp;

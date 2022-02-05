@@ -1,14 +1,13 @@
-import Language from "../components/language.js"
-import Nav from "../components/nav.js"
+import React from 'react';
+import Language from '../components/language';
+import Nav from '../components/nav';
 
-const LayoutOld = ({ children }) => {
-  return (
-    <>
-      <Nav />
-      <Language />
-      {children}
-    </>
-  )
-}
+const LayoutOld = ({ children }) => (
+  <>
+    <Nav />
+    <Language />
+    {children}
+  </>
+);
 
-export default LayoutOld
+export default LayoutOld;

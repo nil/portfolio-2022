@@ -1,12 +1,14 @@
-import Document, { Html, Head, Main, NextScript } from "next/document"
-import Layout from "./_layout"
+/* eslint-disable class-methods-use-this */
+import React from 'react';
+import Document, {
+  Html, Head, Main, NextScript,
+} from 'next/document';
 
 class MyDocument extends Document {
   render() {
     return (
       <Html>
         <Head>
-          {/* eslint-disable-next-line */}
           <link
             rel="stylesheet"
             href="https://fonts.googleapis.com/css?family=Staatliches"
@@ -33,8 +35,8 @@ class MyDocument extends Document {
           <NextScript />
         </body>
       </Html>
-    )
+    );
   }
 }
 
-export default MyDocument
+export default MyDocument;

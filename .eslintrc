@@ -1,12 +1,13 @@
 {
   "extends": [
-    "next",
-    "prettier"
+    "airbnb-base",
+    "plugin:react/recommended"
   ],
-  "plugins": [
-    "prettier"
-  ],
+  "env": {
+    "node": true,
+    "browser": true
+  },
   "rules": {
-    "prettier/prettier": "error"
+    "react/prop-types": 0
   }
 }
