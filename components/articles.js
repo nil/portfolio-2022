@@ -1,19 +1,19 @@
 import React from "react"
 import Card from "./card"
 
-const Articles = ({ articles }) => {
-  const leftArticlesCount = Math.ceil(articles.length / 5)
-  const leftArticles = articles.slice(0, leftArticlesCount)
-  const rightArticles = articles.slice(leftArticlesCount, articles.length)
+const Articles = ({ projects }) => {
+  // const leftArticlesCount = Math.ceil(projects.length / 5)
+  // const leftArticles = projects.slice(0, leftArticlesCount)
+  // const rightArticles = projects.slice(leftArticlesCount, projects.length)
 
   return (
     <div>
       <div className="uk-child-width-1-2@s">
         <div>
-          {articles.map(article => (
+          {projects.map(article => (
             <div className="card" key={article.id}>
-              <b>{article.attributes.Name}</b>
-              <div>{article.attributes.Extract}</div>
+              <b>{article.attributes.title}</b>
+              <div>{article.attributes.extract}</div>
             </div>
           ))}
         </div>

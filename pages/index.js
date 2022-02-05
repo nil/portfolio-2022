@@ -1,34 +1,35 @@
 import React from "react"
 import Articles from "../components/articles"
-import LayoutOld from "../components/layout-old"
+import Layout from "./_layout"
 import Seo from "../components/seo"
 import { fetchAPI } from "../lib/api"
 import Link from "next/link"
+import Language from "../components/language"
 
-const Home = ({ articles, categories, homepage }) => {
+const Home = ({ projects, categories, homepage }) => {
   return (
-    <LayoutOld categories={categories}>
+    <Layout categories={categories}>
       {/* <Seo seo={homepage.attributes.seo} /> */}
       <div className="uk-section">
         <div className="uk-container uk-container-large">
           <h1>Index</h1>
-          <Articles articles={articles} />
+          <Articles projects={projects} />
           <Link href="/about">About</Link>
         </div>
       </div>
-    </LayoutOld>
+    </Layout>
   )
 }
 
 export async function getStaticProps(context) {
   // Run API calls in parallel
-  const [articlesRes] = await Promise.all([
+  const [projectsRes] = await Promise.all([
     fetchAPI("/projects", { locale: context.locale }),
   ])
 
   return {
     props: {
-      articles: articlesRes.data,
+      projects: projectsRes.data,
     },
     revalidate: 1,
   }
