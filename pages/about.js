@@ -8,7 +8,7 @@ const About = () => {
 
   return (
     <Layout>
-      <h1>about, {helloWorld}</h1>
+      <h1 className='text-3xl font-bold underline italic'>about, {helloWorld}</h1>
       <Link href="/">home</Link>
     </Layout>
   );
