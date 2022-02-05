@@ -29,7 +29,7 @@ class MyDocument extends Document {
           />
         </Head>
         <body>
-          <Layout />
+          <Main />
           <NextScript />
         </body>
       </Html>
