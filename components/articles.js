@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 
 const Articles = ({ projects }) => (
   <div>
@@ -6,7 +7,7 @@ const Articles = ({ projects }) => (
       <div>
         {projects.map((article) => (
           <div className="card" key={article.id}>
-            <b>{article.attributes.title}</b>
+            <Link href={`/project/${article.attributes.slug}`}>{article.attributes.title}</Link>
             <div>{article.attributes.extract}</div>
           </div>
         ))}
