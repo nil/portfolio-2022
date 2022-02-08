@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+html {
+  font-size: 20px; /* TODO: make responsive */
+}
+
+@layer components {
+  .grid-basic {
+    @apply grid grid-cols-12 gap-x-s
+  }  
+}
