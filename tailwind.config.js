@@ -1,3 +1,5 @@
+const dashBorderPlugin = require('./lib/dash-border-plugin');
+
 module.exports = {
   content: [
     './pages/**/*.{js,ts,jsx,tsx}',
@@ -86,7 +88,27 @@ module.exports = {
         xl: '128px',
         '2xl': '208px',
       },
+      borderWidth: {
+        s: '2px',
+        m: '4px',
+        l: '6px',
+        xl: '8px',
+      },
+      borderDashed: {
+        s: '24px',
+        m: '24px',
+        l: '32px',
+        xl: '40px',
+      },
+      borderGap: {
+        s: '4px',
+        m: '4px',
+        l: '8px',
+        xl: '8px',
+      },
     },
   },
-  plugins: [],
+  plugins: [
+    dashBorderPlugin,
+  ],
 };
