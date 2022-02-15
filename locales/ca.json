@@ -1,3 +1,8 @@
 {
-  "helloWorld": "Hola, món!"
+  "helloWorld": "Hola, món!",
+
+  "navbar": {
+    "projects": "Projectes",
+    "about": "Sobre mi"
+  }
 }

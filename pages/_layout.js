@@ -1,10 +1,10 @@
 import React from 'react';
 import Language from '../components/language';
-import Nav from '../components/nav';
+import Navbar from '../components/navbar';
 
 const LayoutOld = ({ children }) => (
   <>
-    <Nav />
+    <Navbar />
     <Language />
     {children}
   </>

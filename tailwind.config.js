@@ -29,6 +29,9 @@ module.exports = {
         50: '#42278D',
         60: '#2C1E50',
       },
+      'navbar-logo': 'var(--navbar-logo, #6E35E7)',
+      'navbar-border': 'var(--navbar-border, #DADDE8)',
+      'navbar-underline': 'var(--navbar-underline, #686B79)',
     },
     fontFamily: {
       sans: ['GT Cinetype', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Helvetica Neue', 'Helvetica', 'Ubuntu', 'Roboto', 'Noto', 'Arial', 'sans-serif'],
@@ -89,18 +92,21 @@ module.exports = {
         '2xl': '208px',
       },
       borderWidth: {
+        xs: '1.5px',
         s: '2px',
         m: '4px',
         l: '6px',
         xl: '8px',
       },
       borderDashed: {
+        xs: '12px',
         s: '24px',
         m: '24px',
         l: '32px',
         xl: '40px',
       },
       borderGap: {
+        xs: '4px',
         s: '4px',
         m: '4px',
         l: '8px',
