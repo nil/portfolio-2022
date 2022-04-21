@@ -1,13 +1,44 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import Metadata from '../../components/metadata';
 import { fetchAPI } from '../../lib/api';
 import Layout from '../_layout';
+import { LocaleContext } from '../_app';
 
-const Article = ({ article }) => (
+const Project = ({ project, metadataItems }) => {
+  const projectText = useContext(LocaleContext).project;
+
+  return (
     <Layout>
-      <h1 className='text-7xl font-bold'>Article, {article.attributes.title}</h1>
-      <p className='bg-blue-100 text-blue-800 py-10 px-5'>{article.attributes.extract}</p>
+      {/* Header */}
+      <section className='bg-brand-60'>
+        <div className='wrapper py-xl'>
+          <h1 className='inline-block text-6xl text-brand-30 boder-dashed border-b-l  border-brand-30'>{project.attributes.title}</h1>
+        </div>
+      </section>
+
+      {/* Summary */}
+      <section className='bg-brand-10'>
+        <div className='wrapper grid grid-cols-12 grid-flow-col gap-x-s py-l'>
+          <div className='col-span-8 text-xl'>
+            {project.attributes.summary}
+          </div>
+          <div className='col-start-10 col-span-3'>
+            {Object.keys(metadataItems).map((key, index) => (
+              <Metadata
+                category={projectText.metadata[key]}
+                content={metadataItems[key]}
+                lastChild={Object.keys(metadataItems).length === index + 1}
+                key={key}
+              />
+            ))}
+
+          </div>
+        </div>
+      </section>
+
     </Layout>
-);
+  );
+};
 
 // Get all possible paths (slugs) to gnerate the static pages. (I think)
 export async function getStaticPaths(context) {
@@ -23,7 +54,7 @@ export async function getStaticPaths(context) {
 }
 
 export async function getStaticProps(context) {
-  const articlesRes = await fetchAPI('/projects', {
+  const projectsRes = await fetchAPI('/projects', {
     filters: {
       slug: { $eq: context.params.slug },
     },
@@ -31,9 +62,15 @@ export async function getStaticProps(context) {
   });
 
   return {
-    props: { article: articlesRes.data[0] },
+    props: {
+      project: projectsRes.data[0],
+      metadataItems: {
+        year: projectsRes.data[0].attributes.year,
+        client: projectsRes.data[0].attributes.client,
+      },
+    },
     revalidate: 1,
   };
 }
 
-export default Article;
+export default Project;

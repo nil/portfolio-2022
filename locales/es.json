@@ -4,5 +4,12 @@
   "navbar": {
     "projects": "Proyectos",
     "about": "Sobre mí"
+  },
+
+  "project": {
+    "metadata": {
+      "year": "Año",
+      "client": "Cliente"
+    }
   }
 }
