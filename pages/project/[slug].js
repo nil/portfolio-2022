@@ -10,19 +10,19 @@ const Project = ({ project, metadataItems }) => {
   return (
     <Layout>
       {/* Header */}
-      <section className='bg-brand-60'>
+      <section className='bg-slate-100'>
         <div className='wrapper py-xl'>
-          <h1 className='inline-block text-6xl text-brand-30 boder-dashed border-b-l  border-brand-30'>{project.attributes.title}</h1>
+          <h1 className='inline-block font-display text-6xl text-brand-40'>{project.attributes.title}</h1>
         </div>
       </section>
 
       {/* Summary */}
-      <section className='bg-brand-10'>
+      <section className='bg-slate-200 border-y border-slate-300'>
         <div className='wrapper grid grid-cols-12 grid-flow-col gap-x-s py-l'>
           <div className='col-span-8 text-xl'>
             {project.attributes.summary}
           </div>
-          <div className='col-start-10 col-span-3'>
+          <div className='relative col-start-10 col-span-3 before:block before:absolute before:left-[-24px] before:h-full before:border-l before:border-brand-40'>
             {Object.keys(metadataItems).map((key, index) => (
               <Metadata
                 category={projectText.metadata[key]}
@@ -35,7 +35,6 @@ const Project = ({ project, metadataItems }) => {
           </div>
         </div>
       </section>
-
     </Layout>
   );
 };

@@ -4,6 +4,8 @@ import Document, {
   Html, Head, Main, NextScript,
 } from 'next/document';
 
+// TODO: Import fonts
+
 class MyDocument extends Document {
   render() {
     return (
@@ -11,7 +13,7 @@ class MyDocument extends Document {
         <Head>
           {/* --- */}
         </Head>
-        <body>
+        <body className="font-body">
           <Main />
           <NextScript />
         </body>

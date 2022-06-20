@@ -6,6 +6,12 @@
   box-sizing: border-box;
 }
 
+@media (prefers-reduced-motion) {
+  * {
+    transition: none;
+  }
+}
+
 html {
   font-size: 20px; /* TODO: make responsive */
   text-rendering: geometricPrecision;
@@ -14,6 +20,10 @@ html {
   font-smoothing: antialiased;
 
   cursor: default;
+}
+
+.font-display {
+  font-feature-settings: 'zero' on, 'ss02' on, 'ss13' on;
 }
 
 @layer components {
