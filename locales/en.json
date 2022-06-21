@@ -9,7 +9,9 @@
   "project": {
     "metadata": {
       "year": "Year",
-      "client": "Client"
+      "client": "Client",
+      "role": "My role",
+      "team": "Team"
     }
   }
 }

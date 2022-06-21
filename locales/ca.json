@@ -9,7 +9,9 @@
   "project": {
     "metadata": {
       "year": "Any",
-      "client": "Client"
+      "client": "Client",
+      "role": "La meva funció",
+      "team": "Equip"
     }
   }
 }

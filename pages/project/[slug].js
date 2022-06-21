@@ -58,6 +58,7 @@ export async function getStaticProps(context) {
       slug: { $eq: context.params.slug },
     },
     locale: context.locale,
+    populate: ['*', 'coverImage', 'skill_roles', 'team.skill_roles', 'blocks'],
   });
 
   return {
@@ -66,6 +67,8 @@ export async function getStaticProps(context) {
       metadataItems: {
         year: projectsRes.data[0].attributes.year,
         client: projectsRes.data[0].attributes.client,
+        role: projectsRes.data[0].attributes.skill_roles.data.map((item) => item.attributes.name),
+        team: projectsRes.data[0].attributes.team,
       },
     },
     revalidate: 1,
